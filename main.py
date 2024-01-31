@@ -1,11 +1,31 @@
-import numpy as np
+import pygame
+from pygame.locals import QUIT, MOUSEBUTTONDOWN
+from game import Game
 
-board = np.zeros((8, 8), dtype=int)
-for i in range(0, 8, 2):
-        board[0, i+1] = 1  # ligne 1, colonnes impaires
-        board[1, i] = 1    # ligne 2, colonnes paires
-        board[2, i+1] = 1  # ligne 3, colonnes impaires
+WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
+RED = (255, 0, 0)
+BLACK = (0, 0, 0)
+GOLD = (255, 215, 0)
+HIGH = (160, 190, 255)
+
+NORTHWEST = "northwest"
+NORTHEAST = "northeast"
+SOUTHWEST = "southwest"
+SOUTHEAST = "southeast"
 
 
 
-print(board)
+
+
+
+
+def main():
+    game = Game()
+    game.setup()
+    while True:
+        game.event_loop()
+        game.update()
+
+if __name__ == "__main__":
+    main()
