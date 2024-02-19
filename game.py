@@ -42,6 +42,8 @@ class Game:
                 self.terminate_game()
 
             if event.type == MOUSEBUTTONDOWN:
+
+                
                 self.handle_mouse_click()
 
     def handle_mouse_click(self):
